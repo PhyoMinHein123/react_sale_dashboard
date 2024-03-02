@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Box, Typography } from '@mui/material';
 import NavGroup from './NavGroup';
 import menuItem,{ managerItems , waiterItems} from 'menu-items';
@@ -7,7 +8,6 @@ import {  addRole, selectRoles } from 'store/reducers/roleSlice';
 
 
 const Navigation = () => {
-
   const dispatch = useDispatch()
   const [item,setItem] = useState(waiterItems)
 
@@ -27,10 +27,10 @@ const Navigation = () => {
       setItem(menuItem)
     }else if(role.some(role => role === "MANAGER")){
       console.log("manager")
-      setItem(managerItems)
+      setItem(menuItem)
     }else{
       console.log("else")
-      setItem(waiterItems)
+      setItem(menuItem)
     }
     console.log("useEffect call", item)
   },[role])

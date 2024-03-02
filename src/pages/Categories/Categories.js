@@ -21,7 +21,7 @@ export default function Category() {
     { field: 'name', headerName: 'Name', width: 150, editable: false },
     { field: 'description', headerName: 'Description', width: 150, editable: false },
     { field: 'status', headerName: 'Status', width: 200, editable: false, type: 'singleSelect', renderCell: (params) => (
-      params.row.status === 'ACTIVE' ? (
+      params.row.status === 'active' ? (
         <Chip label="active" color="success" />
       ) : (
         <Chip label="deactive" color="error" />
@@ -62,7 +62,7 @@ export default function Category() {
   <>
     <Grid container>
       <Grid item xs={6} >
-        <Button onClick={()=>{navigate('/category/create');}}>
+        <Button onClick={()=>{navigate('/categories/create');}}>
           <AddIcon/> category
         </Button>
       </Grid>
@@ -73,7 +73,7 @@ export default function Category() {
     <Box
       component={Paper}
       sx={{
-        height: 410,
+        height: 630,
         width: '100%',
         '& .actions': {
           color: 'text.secondary',
